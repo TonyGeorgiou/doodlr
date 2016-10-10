@@ -1,0 +1,29 @@
+
+<h1>New Doodle</h1>
+
+<% if @doodle.errors.any? %>
+  <ol>
+    <% @doodle.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ol>
+<% end %>
+
+<%= form_for @doodle do |f| %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+
+    <p>
+      <%= f.label :image_url %>
+      <%= f.text_field :image_url %>
+    </p>
+
+    <p>
+      <%= f.label :caption %>
+      <%= f.text_field :caption %>
+    </p>
+
+  <%= f.submit 'Submit your new doodle!' %>
+<% end %>
