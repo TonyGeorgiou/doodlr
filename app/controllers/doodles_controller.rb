@@ -1,6 +1,6 @@
 class DoodlesController < ApplicationController
   def index
-    @doodles = Doodle.all
+    @doodles = Doodle.all   #TODO: .where( :public => true )
   end
 
   def new

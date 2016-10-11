@@ -1,0 +1,10 @@
+<h1><%= @doodle.title %></h1>
+<h2><em><%= link_to @doodle.artist.name, @doodle.artist if @doodle.artist %></em></h2>
+
+<%= image_tag(@doodle.image, :class => 'feature') %>
+<!-- TODO Show other database columns here -->
+
+<div class="controls">
+  <%= link_to 'Edit doodle', edit_doodle_path(@doodle) %>
+  <%= link_to 'Delete doodle', @doodle, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+</div>

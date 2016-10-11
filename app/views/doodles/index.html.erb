@@ -2,7 +2,8 @@
 <p>Find me in app/views/doodle/index.html.erb</p>
 
 <ul>
-<% @images.each do |image| %>
-  <li><%= image.title %> by <%= image.artist.name if image.artist.present? %><br><%= image_tag image.url %></li>
+<% @doodles.each do |doodle| %>
+  <li><%= doodle.title %> by <%= doodle.artist.name if doodle.artist.present? %><br>
+  <%= image_tag doodle.image_url, :class => 'doodle' %></li>
 <% end %>
 </ul>

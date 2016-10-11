@@ -1,2 +1,12 @@
 <h1>Artist#show</h1>
 <p>Find me in app/views/artist/show.html.erb</p>
+
+<h2><%= @artist.name %></h2>
+
+<%= image_tag @artist.avatar, :class => 'avatar' %>     
+
+<h3><%= @artist.location %></h3>
+
+<h3><%= @artist.dob %></h3>
+
+<h3><%= @artist.blurb %></h3>

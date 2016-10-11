@@ -1,2 +1,11 @@
-<h1>Artist#new</h1>
-<p>Find me in app/views/artist/new.html.erb</p>
+<h1>Sign Up</h1>
+
+<% if @artist.errors.any? %>
+  <ol>
+    <% @artist.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ol>
+<% end %>
+
+<%= render :partial => 'form' %>
