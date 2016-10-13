@@ -28,6 +28,8 @@ gem 'bcrypt'
 
 gem 'cloudinary'
 
+gem 'bootstrap-sass'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'

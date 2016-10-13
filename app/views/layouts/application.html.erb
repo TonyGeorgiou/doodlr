@@ -5,24 +5,52 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= cloudinary_js_config %>
 </head>
 <body>
 
-  <nav>
-    <%= link_to 'Home', root_path %>
-    <% if @current_user.present? %>
-      <%= link_to "Account", edit_artist_path(@current_user.id) %>
-      <%= link_to 'Profile', artist_path( @current_user.id ) %>
-      <%= link_to "Logout #{ @current_user.email }", login_path, :method => 'delete' %>
-        <%= link_to 'New Doodle', new_doodle_path %>
+<div class="container">
 
+
+
+<nav class="navbar navbar-light bg-faded">
+  <% if @current_artist.present? %>
+  <ul class="nav navbar-nav">
+
+    <li class="nav-item active">
+      <a class="nav-link" href="<%= root_path %>">Home <span class="sr-only">(current)</span></a>
+    </li>
+
+    <li class="nav-item">
+        <%= link_to 'Profile', artist_path( @current_artist.id ) %>
+    </li>
+
+    <li class="nav-item">
+        <%= link_to "Edit Account", edit_artist_path(@current_artist.id) %>
+    </li>
+
+    <li class="nav-item">
+      <%= link_to "Logout #{ @current_artist.email }", login_path, :method => 'delete' %>
+    </li>
+
+  <li class="nav-item">
+        <%= link_to 'New Doodle', new_doodle_path %>
+    </li>
+    <li class="nav-item">
+        <%= link_to 'All Doodles', doodles_path %>
+    </li>
+
+  </ul>
     <% else %>
+      <a class="nav-link" href="<%= root_path %>">Home <span class="sr-only">(current)</span></a>
       <%= link_to 'Sign up', new_artist_path %>
       <%= link_to 'Sign in', login_path %>
     <% end %>
   </nav>
 
 <%= yield %>
+
+</div>
 
 </body>
 </html>

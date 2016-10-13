@@ -1,0 +1,10 @@
+<h1>Edit</h1>
+
+<%= form_for(@doodle, :html => {:multipart => true}) do |f| %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+
+  <%= f.submit 'Change title.' %>
+<% end %>

@@ -1,9 +1,14 @@
 
-<%= form_for @artist do |f| %>
+<%= form_for(@artist, :html => {:multipart => true}) do |f| %>
 
 <p>
   <%= f.label :name %>
   <%= f.text_field :name %>
+</p>
+
+<p>
+  <%= f.label :avatar %>
+  <%= f.cl_image_upload :avatar %>
 </p>
 
 <p>
@@ -15,6 +20,13 @@
   <%= f.label :location %>
   <%= f.text_field :location %>
 </p>
+
+
+  <p>
+    <%= f.label :blurb %>
+    <%= f.text_area :blurb, :id => 'artist_blurb', :maxlength => 100 %>
+  </p>
+
 
   <p>
     <%= f.label :email %>

@@ -1,9 +1,6 @@
-<h1>Doodle#index</h1>
-<p>Find me in app/views/doodle/index.html.erb</p>
-
 <ul>
 <% @doodles.each do |doodle| %>
-  <li><%= doodle.title %> by <%= doodle.artist.name if doodle.artist.present? %><br>
-  <%= image_tag doodle.image_url, :class => 'doodle' %></li>
+  <li><%= link_to doodle.title, doodle_path(doodle.id) %> by <%= link_to doodle.artist.name, artist_path(doodle.artist.id) if doodle.artist.present? %><br>
+  <%= cl_image_tag doodle.image_url, :class => 'doodle' %></li>
 <% end %>
 </ul>

@@ -1,12 +1,35 @@
-<h1>Artist#show</h1>
-<p>Find me in app/views/artist/show.html.erb</p>
+<h2>Doodler: <%= @artist.name %></h2>
 
-<h2><%= @artist.name %></h2>
+<% if flash[:message].present? %>
+  <p><%= flash[:message] %></p>
+<% end %>
 
-<%= image_tag @artist.avatar, :class => 'avatar' %>     
+<% if @artist.id != @current_artist.id && ! @current_artist.following_ids.include?(@artist.id) %>
+ <%= link_to 'Follow this Doodler', follow_new_path(@artist.id) %>
+<% end %>
 
-<h3><%= @artist.location %></h3>
+<!-- <%= image_tag @artist.avatar, :class => 'avatar' %> -->
+<%= cl_image_tag(@artist.avatar, :class => 'avatar') %>
 
-<h3><%= @artist.dob %></h3>
+<h3>Location: <%= @artist.location %></h3>
 
-<h3><%= @artist.blurb %></h3>
+<h3>Dob: <%= @artist.dob %></h3>
+
+<h3>Blurb: <%= @artist.blurb %></h3>
+
+<h4>Doodles:</h4>
+
+<% @doodles.each do |doodle| %>
+
+  <h4>Title: <%= doodle.title %></h4>
+  <%= cl_image_tag(doodle.image_url, :class => 'doodle') %>
+
+  <% if doodle.artist_id == @current_artist.id %>
+    <div class="controls">
+      <%= link_to 'Edit doodle', edit_doodle_path(doodle) %>
+      <%= link_to 'Delete doodle', doodle, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+    </div>
+  <% end %>
+
+
+<% end %>

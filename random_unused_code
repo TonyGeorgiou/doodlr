@@ -1,0 +1,7 @@
+<!-- <nav class="navbar navbar-default">
+    <%= link_to 'Home', root_path %>
+      <%= link_to "Edit Account", edit_artist_path(@current_user.id) %>
+      <%= link_to 'Profile', artist_path( @current_user.id ) %>
+      <%= link_to "Logout #{ @current_user.email }", login_path, :method => 'delete' %>
+      <%= link_to 'New Doodle', new_doodle_path %>
+      <%= link_to 'All Doodles', doodles_path %> -->

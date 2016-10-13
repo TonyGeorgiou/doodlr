@@ -8,10 +8,13 @@ class ApplicationController < ActionController::Base
   private
   def fetch_user
     if session[:artist_id].present?
-      @current_user = Artist.find_by :id => session[:artist_id]
+      @current_artist = Artist.find_by :id => session[:artist_id]
     end
+    session[:artist_id] = nil unless @current_artist.present?
+  end
 
-    session[:artist_id] = nil unless @current_user.present?
+  def check_for_user
+    redirect_to root_path unless @current_artist.present?
   end
 
 end

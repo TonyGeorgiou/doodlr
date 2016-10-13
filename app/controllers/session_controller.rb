@@ -10,6 +10,7 @@ class SessionController < ApplicationController
       session[:artist_id] = artist.id
       redirect_to root_path
     else
+      flash[:message] = 'Invalid username or password. Please try again.'
       redirect_to login_path
     end
   end

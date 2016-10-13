@@ -3,6 +3,25 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 img.avatar {
-  max-width: 6%;
-  max-height: 8%;
+  max-width: 10%;
+  max-height: 12%;
+}
+
+body {
+  background-color: #c7d3e5;
+  font-family: 'Nunito', sans-serif;
+}
+
+#artist_blurb {
+  max-width: 80%;
+  max-height: 30%;
+}
+
+nav {
+  display: inline-block;
+  background-color: #cca676 !important;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 20px 10px;
+  margin-right: 20px;
 }

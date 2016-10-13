@@ -1,8 +1,0 @@
-<h1>Doodle#index</h1>
-<p>Find me in app/views/doodle/index.html.erb</p>
-
-<ul>
-<% @images.each do |image| %>
-  <li><%= image.title %> by <%= image.artist.name if image.artist.present? %><br><%= image_tag image.url %></li>
-<% end %>
-</ul>

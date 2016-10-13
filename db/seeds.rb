@@ -11,7 +11,7 @@ a1 = Artist.create :name => 'Guy One', :location => 'Sydney', :dob => '1970/11/2
 
 a2 = Artist.create :name => 'Sophie Smith', :location => 'Melbourne', :dob => '1990/1/25', :email => 'sophie@cold.com', :password => 'chicken'
 
-a3 = Artist.create :name => 'John Styne', :location => 'London', :dob => '1998/9/7', :email => 'john@ cold.com', :password => 'chicken'
+a3 = Artist.create :name => 'John Styne', :location => 'London', :dob => '1998/9/7', :email => 'john@cold.com', :password => 'chicken'
 
 a4 = Artist.create :name => 'Jenny Long', :location => 'Nairobi', :dob => '1960/8/23', :email => 'jenny@one.com', :password => 'chicken'
 
@@ -19,7 +19,7 @@ a5 = Artist.create :name => 'Barry Lynn', :location => 'New York', :dob => '2001
 
 a6 = Artist.create :name => 'Sue Jones', :location => 'Paris', :dob => '1979/3/29', :email => 'sue@one.com', :password => 'chicken'
 
-# ----------------------------------------------------------------------------------------------  
+# ----------------------------------------------------------------------------------------------
 
 Doodle.destroy_all
 d1 = Doodle.create :title => 'Psychedelic Vision #1', :caption => 'It seemed so real', :url => 'http://drawingimage.com/files/1/Psychedelic-Art-Photo-Drawing.jpg'
@@ -66,5 +66,9 @@ d14 = Doodle.create :title => 'Psychedelic Vision #1', :caption => 'It seemed so
 d15 = Doodle.create :title => 'Psychedelic Vision #1', :caption => 'It seemed so real', :url =>'http://cdn.theatlantic.com/static/coma/images/issues/200609/doodles/internal_security_psweb.jpg'
 
 
-
-# a1.images << d1
+a1.doodles << d1 << d2 << d3
+a2.doodles << d4 << d5 << d6
+a3.doodles << d7 << d8 << d9
+a4.doodles << d10 << d11
+a5.doodles << d12 << d13
+a6.doodles << d14 << d15

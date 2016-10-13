@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get '/follow/:id' => 'follows#create', :as => 'follow_new'
+  delete '/follow/:id' => 'follows#destroy'
+
+  get 'follows/index'
+  get 'follows/show'
+
   root :to => 'pages#home'
 
   resources :doodles, :artists

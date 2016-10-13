@@ -1,2 +1,43 @@
-<h1>Artist#edit</h1>
-<p>Find me in app/views/artist/new.html.erb</p>
+<h1>Edit Profile</h1>
+
+<% if @artist.errors.any? %>
+  <ol>
+    <% @artist.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ol>
+<% end %>
+
+<%= form_for(@artist, :html => {:multipart => true}) do |f| %>
+  <p>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </p>
+
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :avatar %>
+    <%= f.cl_image_upload :image %>
+  </p>
+
+  <p>
+    <%= f.label :blurb %>
+    <%= f.text_area :blurb, :id => 'artist_blurb', :maxlength => 100 %>
+  </p>
+
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </p>
+
+  <%= f.submit 'Save profile' %>
+<% end %>

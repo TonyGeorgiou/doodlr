@@ -2,7 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* for images in doodle#index */
 img.doodle{
   max-width: 30%;
   max-height: 50%;
+}
+
+/* for images in doodle#show */
+img.doodle_show{
+  max-width: 80%;
+}
+
+
+
+body {
+  background-color: #c7d3e5;
+}
+
+nav {
+  display: inline-block;
+  background-color: #c9d9e9;
 }
