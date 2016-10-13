@@ -2,9 +2,9 @@
 <h2><em><%= link_to @doodle.artist.name, @doodle.artist if @doodle.artist %></em></h2>
 
 <%= cl_image_tag(@doodle.image_url, :class => 'doodle_show') %>
-<!-- TODO Show other database columns here -->
 
-<% if @doodle.artist_id == @current_user.id %>
+
+<% if @doodle.artist_id == @current_artist.id %>
   <div class="controls">
     <%= link_to 'Edit doodle', edit_doodle_path(@doodle) %>
     <%= link_to 'Delete doodle', @doodle, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>

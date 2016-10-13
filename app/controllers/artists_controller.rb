@@ -30,12 +30,12 @@ class ArtistsController < ApplicationController
 
   def edit
     @artist = Artist.find params[:id]
-    redirect_to root_path unless @current_user.id == @artist.id
+    redirect_to root_path unless @current_artist.id == @artist.id
   end
 
   def update
     artist = Artist.find params[:id]
-    redirect_to root_path unless @current_user.id == artist.id
+    redirect_to root_path unless @current_artist.id == artist.id
 
     if params[:file].present?
       # Then call Cloudinary's upload method, passing in the file in params

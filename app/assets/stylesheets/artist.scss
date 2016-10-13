@@ -19,9 +19,16 @@ body {
 
 nav {
   display: inline-block;
-  background-color: #cca676 !important;
+  background-color: #b08010 !important;
   font-size: 2em;
   font-weight: bold;
   padding: 20px 10px;
   margin-right: 20px;
+  border-radius: 20px;
+}
+
+#profile_details {
+  background-color: #efc050 !important;
+  padding: 10px;
+  border-radius: 20px;
 }

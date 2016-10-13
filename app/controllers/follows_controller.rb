@@ -9,6 +9,8 @@ class FollowsController < ApplicationController
   end
 
   def destroy
+    follow = Follow.where(:follower_id => @current_artist.id, :followed_id => params[:id]).destroy_all
+    redirect_to artist_path( params[:id] )
   end
 
   def index

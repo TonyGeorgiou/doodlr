@@ -8,7 +8,7 @@ class DoodlesController < ApplicationController
   end
 
   def create
-    doodle = @current_user.doodles.create doodle_params
+    doodle = @current_artist.doodles.create doodle_params
     if params[:file].present?
       # Then call Cloudinary's upload method, passing in the file in params
       req = Cloudinary::Uploader.upload(params[:file])
@@ -24,12 +24,12 @@ class DoodlesController < ApplicationController
 
   def edit
     @doodle = Doodle.find params[:id]
-    redirect_to doodles_path unless @current_user.id == @doodle.artist_id
+    redirect_to doodles_path unless @current_artist.id == @doodle.artist_id
   end
 
   def update
     doodle = Doodle.find params[:id]
-    redirect_to doodles_path unless @current_user.id == doodle.artist_id
+    redirect_to doodles_path unless @current_artist.id == doodle.artist_id
     doodle.update doodle_params
     redirect_to doodle
   end
@@ -40,7 +40,7 @@ class DoodlesController < ApplicationController
 
   def destroy
     doodle = Doodle.find params[:id]
-    redirect_to doodles_path unless @current_user.id == doodle.artist_id
+    redirect_to doodles_path unless @current_artist.id == doodle.artist_id
     doodle.destroy
     redirect_to doodles_path
   end
