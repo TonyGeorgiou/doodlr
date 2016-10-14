@@ -23,12 +23,17 @@ nav {
   font-size: 2em;
   font-weight: bold;
   padding: 20px 10px;
-  margin-right: 20px;
-  border-radius: 20px;
+  margin-right: 20  px;
+  border-radius: 20px !important;
 }
 
 #profile_details {
   background-color: #efc050 !important;
   padding: 10px;
   border-radius: 20px;
+}
+
+.nav-item a {
+  padding: 10px 10px !important;
+  font-size: 20px !important;
 }
